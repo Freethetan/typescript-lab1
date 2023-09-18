@@ -31,12 +31,21 @@ export default class Task {
     }
     set due_date(value) {
         this._due_date = value;
-        this._status = "due";
     }
     get status() {
         return this._status;
     }
     set status(value) {
         this._status = value;
+    }
+    toString() {
+        return {
+            "uuid": this._uuid,
+            "title": this._title,
+            "description": this._description,
+            "type": this._type,
+            "due_date": this._due_date,
+            "status": this._status
+        };
     }
 }

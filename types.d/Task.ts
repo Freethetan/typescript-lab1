@@ -42,7 +42,6 @@ export default class Task {
 
     set due_date(value: Date) {
         this._due_date = value;
-        this._status = "due";
     }
 
     get status(): "due" | "done" {
@@ -51,5 +50,16 @@ export default class Task {
 
     set status(value: "due" | "done") {
         this._status = value;
+    }
+
+    toString(){
+        return {
+            "uuid": this._uuid,
+            "title": this._title,
+            "description": this._description,
+            "type": this._type,
+            "due_date": this._due_date,
+            "status": this._status
+        }
     }
 }
